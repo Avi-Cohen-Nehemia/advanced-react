@@ -10,18 +10,13 @@ class SignUp extends Component {
             confirm: '',
         }
 
-        this.handlePassword = this.handlePassword.bind(this)
-        this.handleConfirm = this.handleConfirm.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
-    handlePassword(e) {
-        let value = e.currentTarget.value;
-        this.setState({ password: value })
-    }
-
-    handleConfirm(e) {
-        let value = e.currentTarget.value;
-        this.setState({ confirm: value })
+    handleChange(e, input) {
+        let change = {}
+        change[input] = e.currentTarget.value;
+        this.setState(change)
     }
 
     render() {
@@ -35,13 +30,13 @@ class SignUp extends Component {
                     label={ 'Password' }
                     color={ color }
                     value={ password }
-                    handleChange={ (e) => this.handlePassword(e) }
+                    handleChange={ (e) => this.handleChange(e, 'password') }
                 />
                 <Password
                     label={ 'Confirm Password' }
                     color={ color }
                     value={ confirm }
-                    handleChange={ (e) => this.handleConfirm(e) }
+                    handleChange={ (e) => this.handleChange(e, 'confirm') }
                 />
             </form>
         );
