@@ -23,4 +23,15 @@ axios.post('/articles', {
     tags: ['article', 'coding']
 })
 */
- 
+
+// POST exercise
+// Create a new article using axios and then console.log() its ID
+axios.post('/articles', {
+    title: 'My Second Article',
+    content: 'This is nice',
+    tags: ['second', 'post']
+}).then(({ data }) => {
+    console.log(data.data.id)
+}).catch(() => {
+    console.log('Oops... Somthing went wrong!')
+})
