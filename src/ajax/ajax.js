@@ -38,6 +38,14 @@ axios.post('/articles', {
 
 // GET exercise
 // Fetch one of your articles from the API and console.log() it
-axios.get('/articles/2')
-    .then(({ data }) => console.log(data.data))
-    .catch(() => console.log('Oops... Somthing went wrong!'))
+// axios.get('/articles/2')
+//     .then(({ data }) => console.log(data.data))
+//     .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// PUT exercise
+// Add a new tag to one of your articles and console.log() the tags array from the response:
+axios.patch('/articles/1', {
+    tags: ['article', 'coding', 'patch']
+})
+.then(({ data }) => console.log(data.data.tags))
+.catch(() => console.log('Oops... Somthing went wrong!'))
