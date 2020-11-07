@@ -6,7 +6,13 @@ import axios from './axios'
 // axios .then() provides the 'response' object which contains all the data sent by the API.
 // for example: axios.get('/articles').then((response) => console.log(response))
 // this response object can be destrcutured to { data } and that what we would usually work with
-axios.get('/articles').then(({ data }) => console.log(data.data))
+// .catch() is a way for us to handle errors in case out request failed.
+axios.get('/articles')
+    .then(({ data }) => console.log(data.data))
+    .catch((error) => {
+        console.log(error.response);
+    });
+    
 
 // POST
 // takes 2 argumants, url to post to and object of data to post
