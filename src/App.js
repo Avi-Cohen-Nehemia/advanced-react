@@ -4,6 +4,7 @@ import Squares from './components/liftingState/Squares'
 import SignUp from './components/liftingState/SignUp'
 import Button from './components/passingDataUp/Button'
 import Form from './components/passingDataUp/Form'
+import Articles from './news/Articles'
 
 const App = () => {
     return (
@@ -18,6 +19,9 @@ const App = () => {
             </Route>
             <Route exact path='/form'>
                 <Form handleSubmit={ (value) => console.log(value) }/>
+            </Route>
+            <Route exact path='/Articles'>
+                <Articles/>
             </Route>    
         </Router>
     );

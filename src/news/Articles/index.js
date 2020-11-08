@@ -18,9 +18,14 @@ class Articles extends Component {
 
     render() {
         return (
-            <ul>
-                {this.state.articles.map(article => (
-                    <li>{article.title}</li>
+            <ul className='list-group'>
+                {this.state.articles.map((article, index) => (
+                    <li
+                        key={index}
+                        className='list-group-item'
+                    >
+                        <h3>{article.title}</h3>
+                    </li>
                 ))}
             </ul>
         )
