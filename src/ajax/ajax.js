@@ -44,8 +44,20 @@ axios.post('/articles', {
 
 // PUT exercise
 // Add a new tag to one of your articles and console.log() the tags array from the response:
-axios.patch('/articles/1', {
-    tags: ['article', 'coding', 'patch']
-})
-.then(({ data }) => console.log(data.data.tags))
+// axios.patch('/articles/1', {
+//     tags: ['article', 'coding', 'patch']
+// })
+// .then(({ data }) => console.log(data.data.tags))
+// .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// DELETE exercise
+// Delete an article and console.log() "Deleted" once you get back a response
+// axios.delete('/articles/1')
+// .then(() => console.log('Deleted!'))
+// .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// DELETE exercise
+Delete an article and console.log() "Deleted" once you get back a response
+axios.delete('/articles/1')
+.then(() => console.log('Deleted!'))
 .catch(() => console.log('Oops... Somthing went wrong!'))
