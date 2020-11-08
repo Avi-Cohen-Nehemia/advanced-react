@@ -56,14 +56,8 @@ axios.post('/articles', {
 // .then(() => console.log('Deleted!'))
 // .catch(() => console.log('Oops... Somthing went wrong!'))
 
-// DELETE exercise
-// Delete an article and console.log() "Deleted" once you get back a response
-// axios.delete('/articles/1')
-// .then(() => console.log('Deleted!'))
-// .catch(() => console.log('Oops... Somthing went wrong!'))
-
 // POST comment exercise
-// Delete an article and console.log() "Deleted" once you get back a response
+// Add a comment to an article using axios and console.log() its ID
 // axios.post('/articles/2/comments', {
 //     email: 'haha@blah.com',
 //     comment: 'This is rubbish!!'
@@ -72,13 +66,19 @@ axios.post('/articles', {
 // .catch(() => console.log('Oops... Somthing went wrong!'))
 
 // GET all comments from a specific article exercise
-// Delete an article and console.log() "Deleted" once you get back a response
+// Use console.log() to list all of the comments for one of your articles
 // axios.get('/articles/2/comments')
 // .then(({ data }) => data.data.map((comment) => console.log(comment.comment)))
 // .catch(() => console.log('Oops... Somthing went wrong!'))
 
-// GET all comments from a specific article exercise
-// Delete an article and console.log() "Deleted" once you get back a response
-axios.get('/articles')
-.then(({ data }) => data.data.map((article) => console.log(article.tags)))
-.catch(() => console.log('Oops... Somthing went wrong!'))
+// GET all tags from all articles exercise
+// Use console.log() to output a list of all the tags
+// axios.get('/articles')
+// .then(({ data }) => data.data.map((article) => console.log(article.tags)))
+// .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// GET an article that doesn't exist
+// Try fetching an article with an ID that doesn't exist and console.log() "Not found" when it fails
+axios.get('/articles/10')
+.then(({ data }) => console.log(data.data))
+.catch(() => console.log('Article Not found!'))
