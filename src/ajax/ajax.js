@@ -79,6 +79,18 @@ axios.post('/articles', {
 
 // GET an article that doesn't exist
 // Try fetching an article with an ID that doesn't exist and console.log() "Not found" when it fails
-axios.get('/articles/10')
-.then(({ data }) => console.log(data.data))
-.catch(() => console.log('Article Not found!'))
+// axios.get('/articles/10')
+// .then(({ data }) => console.log(data.data))
+// .catch(() => console.log('Article Not found!'))
+
+// GET all titles
+// Using console.log() output an array of just the titles of all the articles
+// axios.get('/articles')
+// .then(({ data }) => {
+//     let titles = []
+//     data.data.forEach(article => {
+//         titles.push(article.title)
+//     });
+//     console.log(titles)
+// })
+// .catch(() => console.log('Oops... Somthing went wrong!'))
