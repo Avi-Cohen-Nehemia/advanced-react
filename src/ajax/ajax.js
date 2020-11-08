@@ -73,6 +73,12 @@ axios.post('/articles', {
 
 // GET all comments from a specific article exercise
 // Delete an article and console.log() "Deleted" once you get back a response
-axios.get('/articles/2/comments')
-.then(({ data }) => data.data.map((comment) => console.log(comment.comment)))
+// axios.get('/articles/2/comments')
+// .then(({ data }) => data.data.map((comment) => console.log(comment.comment)))
+// .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// GET all comments from a specific article exercise
+// Delete an article and console.log() "Deleted" once you get back a response
+axios.get('/articles')
+.then(({ data }) => data.data.map((article) => console.log(article.tags)))
 .catch(() => console.log('Oops... Somthing went wrong!'))
