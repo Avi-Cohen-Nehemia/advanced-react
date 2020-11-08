@@ -64,9 +64,15 @@ axios.post('/articles', {
 
 // POST comment exercise
 // Delete an article and console.log() "Deleted" once you get back a response
-axios.post('/articles/2/comments', {
-    email: 'haha@blah.com',
-    comment: 'This is rubbish!!'
-})
-.then(({ data }) => console.log(data.data))
+// axios.post('/articles/2/comments', {
+//     email: 'haha@blah.com',
+//     comment: 'This is rubbish!!'
+// })
+// .then(({ data }) => console.log(data.data))
+// .catch(() => console.log('Oops... Somthing went wrong!'))
+
+// GET all comments from a specific article exercise
+// Delete an article and console.log() "Deleted" once you get back a response
+axios.get('/articles/2/comments')
+.then(({ data }) => data.data.map((comment) => console.log(comment.comment)))
 .catch(() => console.log('Oops... Somthing went wrong!'))
