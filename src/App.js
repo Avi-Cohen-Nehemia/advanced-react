@@ -35,7 +35,7 @@ const App = () => {
                         <CreateArticle />
                     </Route>
 
-                    <Route exact path='/news/:id' render={ ({match}) => (
+                    <Route path='/news/:id' render={ ({match}) => (
                         <Article id={ match.params.id }/>
                     )}/>
 

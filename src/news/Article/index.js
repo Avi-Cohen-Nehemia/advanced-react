@@ -10,7 +10,8 @@ class Article extends Component {
 
         this.state = {
             article: {},
-            notFound: false
+            notFound: false,
+            loaded: false,
         }
     }
 
@@ -18,23 +19,28 @@ class Article extends Component {
         const { id } = this.props
         axios.get(`articles/${id}`)
         .then(({ data }) => {
-            this.setState({ article: data.data })
+            this.setState({
+                article: data.data,
+                loaded: true
+            })
         })
         .catch(() => this.setState({notFound: true}))
     }
 
     render() {
         const { id } = this.props
-        const { article, notFound } = this.state
+        const { article, notFound, loaded } = this.state
 
         return (
-            notFound ? <FourOhFour /> :
+            !loaded ? <p>Loading...</p>
+            : (notFound ?
+            <FourOhFour /> :
             <>
                 <h2>{ article.title }</h2>
                 <p>{ article.content }</p>
                 <Comments id={ id }/>
                 <CreateComment id={ id }/>
-            </>
+            </>)
         )
     }
 }
