@@ -25,20 +25,25 @@ class Comments extends Component {
         e.preventDefault()
         
         const { id } = this.props
+        const { email, comment } = this.state
 
-        axios.post(`articles/${id}/comments`, {
-            email: this.state.email,
-            comment: this.state.comment,
-        }).then(() => {
+        let success = () => {
             this.setState({
                 email: '',
                 comment: '',
             })
-        })
+        }
+
+        axios.post(`articles/${id}/comments`, {
+            email: email,
+            comment: comment,
+        }).then(success)
         .catch((error) => console.log(error.response))
     }
 
     render() {
+        const { email, comment } = this.state
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className='form-row'>
@@ -46,7 +51,7 @@ class Comments extends Component {
                         <label forhtml={'Email'}>{'Email'}</label>
                         <input
                             id={'Email'}
-                            value={this.state.email}
+                            value={email}
                             onChange={(e) => this.handleChange(e, 'email')}
                             className='form-control'
                             type='email'
@@ -58,7 +63,7 @@ class Comments extends Component {
                         <label forhtml={'Comment'}>{'Comment'}</label>
                         <input
                             id={'Comment'}
-                            value={this.state.comment}
+                            value={comment}
                             onChange={(e) => this.handleChange(e, 'comment')}
                             className='form-control'
                             type='text'
