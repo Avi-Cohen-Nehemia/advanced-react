@@ -7,7 +7,6 @@ class Comments extends Component {
 
         this.state = {
             comments: [],
-            errorMessage: ''
         }
     }
 
@@ -17,18 +16,15 @@ class Comments extends Component {
         axios.get(`articles/${id}/comments`).then(({ data }) => {
             this.setState({ comments: data.data })
         })
-        .catch(() => {
-            this.setState({ errorMessage: 'No Comments left on this article yet' })
-        })
     }
 
     render() {
-        const { comments, errorMessage } = this.state
+        const { comments } = this.state
 
         return (
             <>
                 <h3>{'Comments'}</h3>
-                { comments.length ?
+                { comments.length > 0 ?
                     <ul className='list-group'>
                         { comments.map((comment, index) => (
                             <li
@@ -40,7 +36,7 @@ class Comments extends Component {
                             </li>
                         )) }
                     </ul>
-                : <p>{ errorMessage }</p>
+                : <p>{'No Comments left on this article yet'}</p>
                 }
             </>
         )

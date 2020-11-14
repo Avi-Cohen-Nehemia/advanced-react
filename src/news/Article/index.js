@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FourOhFour from '../../components/FourOhFour'
 import axios from './../../ajax/axios'
 import Comments from './../Comments'
+import CreateComment from './../CreateComment'
 
 class Article extends Component {
     constructor(props) {
@@ -23,12 +24,16 @@ class Article extends Component {
     }
 
     render() {
+        const { id } = this.props
+        const { article, notFound } = this.state
+
         return (
-            this.state.notFound ? <FourOhFour /> :
+            notFound ? <FourOhFour /> :
             <>
-                <h2>{ this.state.article.title }</h2>
-                <p>{ this.state.article.content }</p>
-                <Comments id={ this.props.id }/>
+                <h2>{ article.title }</h2>
+                <p>{ article.content }</p>
+                <Comments id={ id }/>
+                <CreateComment id={ id }/>
             </>
         )
     }

@@ -12,34 +12,36 @@ import FourOhFour from './components/FourOhFour'
 const App = () => {
     return (
         <Router>
-            <Link to="/">
-                <h1 className="page-header">{'Bloggo Magnifico'}</h1>
-            </Link>
-            <Switch>
-                <Route exact path='/squares' component={ Squares }/>
-                <Route exact path='/signup'>
-                    <SignUp minimumLength={ 12 }/>
-                </Route>
-                <Route exact path='/button'>
-                    <Button handleUpdate={ (value) => console.log(value) }/>
-                </Route>
-                <Route exact path='/form'>
-                    <Form handleSubmit={ (value) => console.log(value) }/>
-                </Route>
+            <div className='container'>
+                <Link to="/">
+                    <h1 className="page-header">{'Bloggo Magnifico'}</h1>
+                </Link>
+                <Switch>
+                    <Route exact path='/squares' component={ Squares }/>
+                    <Route exact path='/signup'>
+                        <SignUp minimumLength={ 12 }/>
+                    </Route>
+                    <Route exact path='/button'>
+                        <Button handleUpdate={ (value) => console.log(value) }/>
+                    </Route>
+                    <Route exact path='/form'>
+                        <Form handleSubmit={ (value) => console.log(value) }/>
+                    </Route>
 
-                <Route exact path='/news'>
-                    <Articles/>
-                </Route>
-                <Route exact path='/news/create'>
-                    <CreateArticle />
-                </Route>
+                    <Route exact path='/news'>
+                        <Articles/>
+                    </Route>
+                    <Route exact path='/news/create'>
+                        <CreateArticle />
+                    </Route>
 
-                <Route exact path='/news/:id' render={ ({match}) => (
-                    <Article id={ match.params.id }/>
-                )}/>
+                    <Route exact path='/news/:id' render={ ({match}) => (
+                        <Article id={ match.params.id }/>
+                    )}/>
 
-                <FourOhFour />
-            </Switch>
+                    <FourOhFour />
+                </Switch>
+            </div>
         </Router>
     );
 }
