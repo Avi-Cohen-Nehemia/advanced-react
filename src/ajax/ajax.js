@@ -58,9 +58,9 @@ axios.post('/articles', {
 
 // POST comment exercise
 // Add a comment to an article using axios and console.log() its ID
-// axios.post('/articles/2/comments', {
+// axios.post('/articles/5/comments', {
 //     email: 'haha@blah.com',
-//     comment: 'This is rubbish!!'
+//     comment: 'blah wombats blah'
 // })
 // .then(({ data }) => console.log(data.data))
 // .catch(() => console.log('Oops... Somthing went wrong!'))
