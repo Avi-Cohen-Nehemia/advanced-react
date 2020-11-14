@@ -22,15 +22,14 @@ class Comments extends Component {
     }
 
     handleSubmit(e) {
+        e.preventDefault()
+        
         const { id } = this.props
 
-        e.preventDefault()
         axios.post(`articles/${id}/comments`, {
             email: this.state.email,
             comment: this.state.comment,
-        })
-        .then(({ data }) => {
-            console.log(data.data)
+        }).then(() => {
             this.setState({
                 email: '',
                 comment: '',
