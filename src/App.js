@@ -5,6 +5,7 @@ import SignUp from './components/liftingState/SignUp'
 import Button from './components/passingDataUp/Button'
 import Form from './components/passingDataUp/Form'
 import Articles from './news/Articles'
+import Article from './news/Article'
 
 const App = () => {
     return (
@@ -20,9 +21,12 @@ const App = () => {
             <Route exact path='/form'>
                 <Form handleSubmit={ (value) => console.log(value) }/>
             </Route>
-            <Route exact path='/Articles'>
+            <Route exact path='/news'>
                 <Articles/>
-            </Route>    
+            </Route>
+            <Route path='/news/:id' render={ ({match}) => (
+                <Article id={ match.params.id }/>
+            )}/>            
         </Router>
     );
 }

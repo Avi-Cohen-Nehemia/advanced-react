@@ -28,8 +28,8 @@ axios.post('/articles', {
 // Create a new article using axios and then console.log() its ID
 // axios.post('/articles', {
 //     title: 'My Second Article',
-//     content: 'This is nice',
-//     tags: ['second', 'post']
+//     content: 'great article',
+//     tags: ['second', 'post again']
 // }).then(({ data }) => {
 //     console.log(data.data.id)
 // }).catch(() => {

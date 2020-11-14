@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from '../../ajax/axios'
+import axios from './../../ajax/axios'
 
 class Articles extends Component {
     constructor(props) {
