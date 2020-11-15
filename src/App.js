@@ -7,6 +7,7 @@ import Form from './components/passingDataUp/Form'
 import Articles from './news/Articles'
 import Article from './news/Article'
 import CreateArticle from './news/CreateArticle'
+import EditArticle from './news/EditArticle'
 import FourOhFour from './components/FourOhFour'
 import CountHooks from './hooks/CountHooks'
 import ClickedHooks from './hooks/ClickedHooks'
@@ -21,13 +22,6 @@ const App = () => {
                 <Link to="/">
                     <h1 className="page-header">{'Bloggo Magnifico'}</h1>
                 </Link>
-                {/* Hooks */}
-                <CountHooks />
-                <ClickedHooks />
-                <SquareHooks />
-                <ToggleTextHooks />
-                <CounterHooks initial={50} max={100}/>
-
                 <Switch>
                     {/* lifting state */}
                     <Route exact path='/squares' component={Squares}/>
@@ -48,9 +42,21 @@ const App = () => {
                     <Route exact path='/news/create'>
                         <CreateArticle />
                     </Route>
-                    <Route path='/news/:id' render={({match}) => (
+                    <Route exact path='/news/:id' render={({match}) => (
                         <Article id={match.params.id}/>
                     )}/>
+                    <Route exact path='/news/:id/edit' render={({match}) => (
+                        <EditArticle id={match.params.id}/>
+                    )}/>
+
+                    <Route exact path='/hooks'>
+                        {/* Hooks */}
+                        <CountHooks />
+                        <ClickedHooks />
+                        <SquareHooks />
+                        <ToggleTextHooks />
+                        <CounterHooks initial={50} max={100}/>
+                    </Route>
 
                     <FourOhFour />
                 </Switch>
