@@ -18,7 +18,7 @@ class Article extends Component {
     componentDidMount() {
         const { id } = this.props
         axios.get(`articles/${id}`)
-        .then(({ data }) => {
+        .then(({data}) => {
             this.setState({
                 article: data.data,
                 loaded: true
@@ -36,10 +36,10 @@ class Article extends Component {
             : (notFound ?
             <FourOhFour /> :
             <>
-                <h2>{ article.title }</h2>
-                <p>{ article.content }</p>
-                <Comments id={ id }/>
-                <CreateComment id={ id }/>
+                <h2>{article.title}</h2>
+                <p>{article.content}</p>
+                <Comments id={id}/>
+                <CreateComment id={id}/>
             </>)
         )
     }

@@ -13,8 +13,8 @@ class Comments extends Component {
     componentDidMount() {
         const { id } = this.props
 
-        axios.get(`articles/${id}/comments`).then(({ data }) => {
-            this.setState({ comments: data.data })
+        axios.get(`articles/${id}/comments`).then(({data}) => {
+            this.setState({comments: data.data})
         })
     }
 
@@ -26,7 +26,7 @@ class Comments extends Component {
                 <h3>{'Comments'}</h3>
                 { comments.length > 0 ?
                     <ul className='list-group'>
-                        { comments.map((comment, index) => (
+                        {comments.map((comment, index) => (
                             <li
                                 key={index}
                                 className='list-group-item'
@@ -36,8 +36,7 @@ class Comments extends Component {
                             </li>
                         )) }
                     </ul>
-                : <p>{'No Comments left on this article yet'}</p>
-                }
+                : <p>{'No Comments left on this article yet'}</p> }
             </>
         )
     }
