@@ -1,17 +1,18 @@
-// import useState hook
 import React, { useState } from 'react'
 
-const CounterHooks = () => {
+const CounterHooks = ({ initial, max }) => {
 
-    // define the variable you want to keep track of and use useState to set its initial value
-    // [state name, function to chage it] = set initial value
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(initial)
 
-    // define an on click event
-    const handleClick = () => setCounter(counter + 1)
+    const handleDecrement = () => counter > 0 ? setCounter(counter - 1) : setCounter(counter)
+    const handleIncrement = () => counter < max ? setCounter(counter + 1) : setCounter(counter)
 
     return (
-        <p onClick={ handleClick }>{ counter }</p>
+        <>
+            <p>{ counter }</p>
+            <button onClick={ handleDecrement }>{'-'}</button>
+            <button onClick={ handleIncrement }>{'+'}</button>
+        </>
     )
 }
 
