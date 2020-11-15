@@ -11,6 +11,7 @@ import FourOhFour from './components/FourOhFour'
 import CounterHooks from './hooks/CounterHooks'
 import ClickedHooks from './hooks/ClickedHooks'
 import SquareHooks from './hooks/SquareHooks'
+import ToggleTextHooks from './hooks/ToggleTextHooks'
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                 <CounterHooks />
                 <ClickedHooks />
                 <SquareHooks />
+                <ToggleTextHooks />
 
                 <Switch>
                     {/* lifting state */}
