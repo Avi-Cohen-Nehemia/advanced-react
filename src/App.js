@@ -8,6 +8,7 @@ import Articles from './news/Articles'
 import Article from './news/Article'
 import CreateArticle from './news/CreateArticle'
 import FourOhFour from './components/FourOhFour'
+import CounterHooks from './hooks/CounterHooks';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     <h1 className="page-header">{'Bloggo Magnifico'}</h1>
                 </Link>
                 <Switch>
+                    {/* lifting state */}
                     <Route exact path='/squares' component={Squares}/>
                     <Route exact path='/signup'>
                         <SignUp minimumLength={12}/>
@@ -28,6 +30,7 @@ const App = () => {
                         <Form handleSubmit={(value) => console.log(value)}/>
                     </Route>
 
+                    {/* Making API requests in react */}
                     <Route exact path='/news'>
                         <Articles/>
                     </Route>
@@ -37,6 +40,9 @@ const App = () => {
                     <Route path='/news/:id' render={({match}) => (
                         <Article id={match.params.id}/>
                     )}/>
+
+                    {/* Hooks */}
+                    <CounterHooks />
 
                     <FourOhFour />
                 </Switch>
