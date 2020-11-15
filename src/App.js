@@ -10,6 +10,7 @@ import CreateArticle from './news/CreateArticle'
 import FourOhFour from './components/FourOhFour'
 import CounterHooks from './hooks/CounterHooks'
 import ClickedHooks from './hooks/ClickedHooks'
+import SquareHooks from './hooks/SquareHooks'
 
 const App = () => {
     return (
@@ -21,7 +22,8 @@ const App = () => {
                 {/* Hooks */}
                 <CounterHooks />
                 <ClickedHooks />
-                
+                <SquareHooks />
+
                 <Switch>
                     {/* lifting state */}
                     <Route exact path='/squares' component={Squares}/>
