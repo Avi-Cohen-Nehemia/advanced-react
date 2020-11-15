@@ -11,7 +11,7 @@ const CounterHooks = () => {
     const handleClick = () => setCounter(counter + 1)
 
     return (
-        <p onClick={ handleClick }>{counter}</p>
+        <p onClick={ handleClick }>{ counter }</p>
     )
 }
 
