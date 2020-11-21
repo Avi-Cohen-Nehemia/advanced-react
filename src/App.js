@@ -16,6 +16,7 @@ import ToggleTextHooks from './hooks/ToggleTextHooks'
 import CounterHooks from './hooks/CounterHooks'
 import StepCounter from './hooks/StepCounter'
 import CatchMeIfYouCan from './hooks/CatchMeIfYouCan'
+import RollCall from './hooks/RollCall'
 
 const App = () => {
     return (
@@ -60,6 +61,7 @@ const App = () => {
                         <CounterHooks initial={50} max={100}/>
                         <StepCounter max={100} step={5}/>
                         <CatchMeIfYouCan jump={100}/>
+                        <RollCall names={['Avi', 'Ricardo', 'Ethan', 'Laura', 'Maria', 'Sath', 'Halim', 'Annie']}/>
                     </Route>
 
                     <FourOhFour />
