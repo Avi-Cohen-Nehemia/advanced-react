@@ -18,6 +18,7 @@ import StepCounter from './hooks/StepCounter'
 import CatchMeIfYouCan from './hooks/CatchMeIfYouCan'
 import RollCall from './hooks/RollCall'
 import PasswordStrength from './hooks/PasswordStrength'
+import TempConvertor from './hooks/TempConverter'
 
 const App = () => {
     return (
@@ -64,6 +65,7 @@ const App = () => {
                         <CatchMeIfYouCan jump={100}/>
                         <RollCall names={['Avi', 'Ricardo', 'Ethan', 'Laura', 'Maria', 'Sath', 'Halim', 'Annie']}/>
                         <PasswordStrength />
+                        <TempConvertor />
                     </Route>
 
                     <FourOhFour />
