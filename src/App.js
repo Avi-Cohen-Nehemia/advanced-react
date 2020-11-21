@@ -14,6 +14,7 @@ import ClickedHooks from './hooks/ClickedHooks'
 import SquareHooks from './hooks/SquareHooks'
 import ToggleTextHooks from './hooks/ToggleTextHooks'
 import CounterHooks from './hooks/CounterHooks'
+import StepCounter from './hooks/StepCounter'
 
 const App = () => {
     return (
@@ -56,6 +57,7 @@ const App = () => {
                         <SquareHooks />
                         <ToggleTextHooks />
                         <CounterHooks initial={50} max={100}/>
+                        <StepCounter max={100} step={5}/>
                     </Route>
 
                     <FourOhFour />
