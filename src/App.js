@@ -17,6 +17,7 @@ import CounterHooks from './hooks/CounterHooks'
 import StepCounter from './hooks/StepCounter'
 import CatchMeIfYouCan from './hooks/CatchMeIfYouCan'
 import RollCall from './hooks/RollCall'
+import PasswordStrength from './hooks/PasswordStrength'
 
 const App = () => {
     return (
@@ -62,6 +63,7 @@ const App = () => {
                         <StepCounter max={100} step={5}/>
                         <CatchMeIfYouCan jump={100}/>
                         <RollCall names={['Avi', 'Ricardo', 'Ethan', 'Laura', 'Maria', 'Sath', 'Halim', 'Annie']}/>
+                        <PasswordStrength />
                     </Route>
 
                     <FourOhFour />
