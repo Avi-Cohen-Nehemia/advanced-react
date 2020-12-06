@@ -20,6 +20,7 @@ import RollCall from './hooks/useState/RollCall'
 import PasswordStrength from './hooks/useState/PasswordStrength'
 import TempConvertor from './hooks/useState/TempConverter'
 import ClickedReducer from './hooks/useReducer/ClickedReducer'
+import StepCounterReducer from './hooks/useReducer/StepCounterReducer'
 
 const App = () => {
     return (
@@ -68,6 +69,7 @@ const App = () => {
                         <PasswordStrength />
                         <TempConvertor />
                         <ClickedReducer />
+                        <StepCounterReducer max={100} step={5}/>
                     </Route>
 
                     <FourOhFour />
