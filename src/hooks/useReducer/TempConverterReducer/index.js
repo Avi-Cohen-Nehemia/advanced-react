@@ -8,18 +8,20 @@ const initialState = {
 
 // Reducer
 const changeCelsius = (state, action) => {
+    const { value } = action
     return {
         ...state,
-        celsius: action.value,
-        fahrenheit: action.value !== '' ? action.value * 1.8 + 32 : ''
+        celsius: value,
+        fahrenheit: value !== '' ? value * 1.8 + 32 : ''
     }
 }
 
 const changeFahrenheit = (state, action) => {
+    const { value } = action
     return {
         ...state,
-        celsius: action.value !== '' ? (action.value - 32) / 1.8 : '',
-        fahrenheit: action.value
+        celsius: value !== '' ? (value - 32) / 1.8 : '',
+        fahrenheit: value
     }
 }
 
@@ -35,6 +37,7 @@ const reducer = (state, action) => {
 const TempConverterReducer = () => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
+    const { celsius, fahrenheit } = state
 
     return (
         <form>
@@ -43,7 +46,7 @@ const TempConverterReducer = () => {
                     <label htmlFor='celsius'>{'°C'}</label>
                     <input
                         id='celsius'
-                        value={state.celsius}
+                        value={celsius}
                         onChange={(e) => dispatch({ type: 'CELSIUS', value: e.currentTarget.value })}
                         className='form-control'
                         type='number'
@@ -55,7 +58,7 @@ const TempConverterReducer = () => {
                     <label htmlFor='fahrenheit'>{'°F'}</label>
                     <input
                         id='fahrenheit'
-                        value={state.fahrenheit}
+                        value={fahrenheit}
                         onChange={(e) => dispatch({ type: 'FAHRENHEIT', value: e.currentTarget.value })}
                         className='form-control'
                         type='number'
