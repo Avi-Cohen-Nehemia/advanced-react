@@ -19,6 +19,7 @@ import CatchMeIfYouCan from './hooks/useState/CatchMeIfYouCan'
 import RollCall from './hooks/useState/RollCall'
 import PasswordStrength from './hooks/useState/PasswordStrength'
 import TempConvertor from './hooks/useState/TempConverter'
+import ClickedReducer from './hooks/useReducer/ClickedReducer'
 
 const App = () => {
     return (
@@ -66,6 +67,7 @@ const App = () => {
                         <RollCall names={['Avi', 'Ricardo', 'Ethan', 'Laura', 'Maria', 'Sath', 'Halim', 'Annie']}/>
                         <PasswordStrength />
                         <TempConvertor />
+                        <ClickedReducer />
                     </Route>
 
                     <FourOhFour />
