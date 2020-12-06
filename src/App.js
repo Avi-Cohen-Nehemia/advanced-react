@@ -21,6 +21,7 @@ import PasswordStrength from './hooks/useState/PasswordStrength'
 import TempConvertor from './hooks/useState/TempConverter'
 import ClickedReducer from './hooks/useReducer/ClickedReducer'
 import StepCounterReducer from './hooks/useReducer/StepCounterReducer'
+import TempConverterReducer from './hooks/useReducer/TempConverterReducer';
 
 const App = () => {
     return (
@@ -70,6 +71,7 @@ const App = () => {
                         <TempConvertor />
                         <ClickedReducer />
                         <StepCounterReducer max={100} step={5}/>
+                        <TempConverterReducer />
                     </Route>
 
                     <FourOhFour />
