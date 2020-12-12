@@ -7,3 +7,10 @@ export const addItem = (state, { value }) => {
         ]
     }      
 }
+
+export const removeItem = (state, { index }) => {
+    return {
+        ...state,
+        items: state.items.filter((item) => item !== state.items[index])
+    }
+}
